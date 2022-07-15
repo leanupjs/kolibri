@@ -1,0 +1,56 @@
+{
+	"name": "@leanup/kolibri-vue",
+	"version": "1.0.0-rc.0",
+	"license": "EUPL-1.2",
+	"homepage": "https://github.com/leanupjs/kolibri#readme",
+	"repository": "https://github.com/leanupjs/kolibri",
+	"bugs": {
+		"url": "https://github.com/leanupjs/kolibri/issues",
+		"email": "github@martinoppitz.com"
+	},
+	"contributors": [
+		{
+			"name": "Martin Oppitz",
+			"email": "github@martinoppitz.com"
+		}
+	],
+	"browser": true,
+	"description": "Das Vue-Modul ist der Framework-Adapter für die Komponenten-Bibliothek.",
+	"sideEffects": false,
+	"scripts": {
+		"clean": "lerna exec --stream -- git clean -f -d -X && git clean -f -d -X",
+		"build:cjs": "tsc -m commonjs --outDir cjs",
+		"build:clean": "rimraf cjs esm types umd",
+		"build:esm": "tsc -m esnext --outDir esm",
+		"build:tsc": "tsc -p .",
+		"build:types": "tsc -d --outDir types && rimraf types/*.js types/*.map types/**/*.js types/**/*.map",
+		"build:umd": "tsc -m umd --outDir umd",
+		"build": "npm run build:clean && npm run build:cjs && npm run build:esm && npm run build:types && npm run build:umd",
+		"prepack": "npm run build",
+		":install": "pnpm install",
+		":publish": "npm unpublish -f --registry=http://localhost:4873 && npm publish --registry=http://localhost:4873"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"devDependencies": {
+		"@babel/types": "7.18.8",
+		"@kolibri/lib": "1.1.2-rc.1",
+		"@leanup/kolibri-components": "1.0.0-rc.0",
+		"@leanup/form": "1.3.22",
+		"@types/minimatch": "3.0.5",
+		"@types/minimist": "1.2.2",
+		"@types/node": "18.0.4",
+		"@types/normalize-package-data": "2.4.1",
+		"rimraf": "3.0.2",
+		"vue": "3.2.37",
+		"typescript": "4.7.4"
+	},
+	"peerDependencies": {
+		"@leanup/kolibri-components": "1.0.0-rc.0",
+		"vue": ">=3"
+	},
+	"files": [
+		"dist/"
+	]
+}
