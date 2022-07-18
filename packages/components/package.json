@@ -76,7 +76,7 @@
 		"@stencil/svelte-output-target": "0.0.3",
 		"@stencil/vue-output-target": "0.6.1",
 		"@types/color-convert": "2.0.0",
-		"@types/jest": "^26.0.24",
+		"@types/jest": "^28.1.6",
 		"@types/node": "18.0.4",
 		"@types/puppeteer": "5.4.6",
 		"@types/wcag-contrast": "3.0.0",
