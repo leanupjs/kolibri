@@ -27,7 +27,8 @@
 		"build": "npm run build:cjs && npm run build:esm && npm run build:types && npm run build:umd",
 		"prepack": "npm run build:clean && npm run build",
 		":install": "pnpm install",
-		":publish": "npm unpublish -f --registry=http://localhost:4873 && npm publish --registry=http://localhost:4873"
+		":unpublish": "npm unpublish -f --registry=http://localhost:4873",
+		":publish": "npm publish --registry=http://localhost:4873 "
 	},
 	"main": "cjs/index.js",
 	"module": "esm/index.js",
@@ -40,7 +41,7 @@
 		"@a11y-ui/core": "1.0.0-rc.13"
 	},
 	"devDependencies": {
-		"@types/node": "18.0.4",
+		"@types/node": "18.6.1",
 		"rimraf": "3.0.2",
 		"typescript": "4.7.4"
 	},

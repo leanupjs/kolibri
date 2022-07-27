@@ -3,9 +3,7 @@ import { promises as fs } from 'fs';
 import { angularOutputTarget } from '@stencil/angular-output-target';
 import { Config } from '@stencil/core';
 import { JsonDocs, OutputTarget } from '@stencil/core/internal';
-import { postcss } from '@stencil/postcss';
 import { reactOutputTarget } from '@stencil/react-output-target';
-import { sass } from '@stencil/sass';
 import { solidOutputTarget } from '@stencil/solid-output-target';
 // import { vueOutputTarget } from '@stencil/vue-output-target';
 // import { svelteOutputTarget } from '@stencil/svelte-output-target';
@@ -195,7 +193,7 @@ export const config: Config = {
 	namespace: 'leanup-kolibri',
 	preamble: 'Leanup web component components',
 	outputTargets: outputTargets,
-	plugins: [sass()],
+	plugins: [],
 	rollupPlugins: {
 		before: [],
 		after: [],

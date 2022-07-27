@@ -1,4 +1,4 @@
 {
-	"packages": ["packages/adapters/angular", "packages/adapters/react", "packages/adapters/solid", "packages/components", "packages/schema", "packages/themes"],
+	"packages": ["packages/adapters/angular", "packages/adapters/react", "packages/adapters/solid", "packages/components", "packages/schema"],
 	"version": "1.0.0-rc.0"
 }

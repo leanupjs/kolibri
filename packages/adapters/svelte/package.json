@@ -28,7 +28,8 @@
 		"build": "npm run build:clean && npm run build:cjs && npm run build:esm && npm run build:types && npm run build:umd",
 		"prepack": "npm run build",
 		":install": "pnpm install",
-		":publish": "npm unpublish -f --registry=http://localhost:4873 && npm publish --registry=http://localhost:4873"
+		":unpublish": "npm unpublish -f --registry=http://localhost:4873",
+		":publish": "npm publish --registry=http://localhost:4873 "
 	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
