@@ -1,0 +1,4 @@
+/*!
+ * KoliBri - the accessible web component library
+ */
+import{r as t,h as i}from"./index-5f2fc243.js";import{e}from"./a11y.tipps-aa545fdc.js";import"./dev.utils-2cf8d1a6.js";const o=class{constructor(i){t(this,i),this._alert=!1,this._hint="",this._orientation="vertical",this._touched=!1}render(){return e("[KolInputRadioGroup] Die Komponenten Input-Radio-Group und Input-Radio werden zur Komponente Input-Radio zusammengeführt. Wir empfehlen den Tag <kol-input-radio> statt <kol-input-radio-group> zu verwenden.\n\nMit der Version 1.1 wird die Komponente KolInputRadioGroup aus der Bibliothek entfernt."),i("kol-input-radio",{_accessKey:this._accessKey,_disabled:this._disabled,_error:this._error,_hideLabel:this._hideLabel,_id:this._id,_list:this._list,_name:this._name,_on:this._on,_orientation:this._orientation,_required:this._required,_tabIndex:this._tabIndex,_touched:this._touched,_value:this._value},i("slot",null))}};export{o as kol_input_radio_group};
