@@ -141,6 +141,7 @@ export class LeanInputAdapter implements Generic.Element.ComponentApi<RequiredPr
 				_name: string;
 				_value: string;
 				_on: unknown;
+				_readOnly: boolean;
 				_required: boolean;
 			} & HTMLElement
 		>(selector).forEach((input) => {
@@ -155,6 +156,7 @@ export class LeanInputAdapter implements Generic.Element.ComponentApi<RequiredPr
 					...this.state._on,
 					onChange: this.onChange,
 				};
+				input._readOnly = this.state._control.readonly === true;
 				input._required = this.state._control.mandatory === true;
 				if (typeof this.state._control.label === 'string' && this.state._control.label.length > 0) {
 					input.innerText = this.state._control.label;
