@@ -1,6 +1,6 @@
 {
 	"name": "@leanup/kolibri-schema",
-	"version": "1.0.0-rc.0",
+	"version": "1.0.0-rc.1",
 	"license": "EUPL-1.2",
 	"homepage": "https://github.com/leanupjs/kolibri#readme",
 	"repository": "https://github.com/leanupjs/kolibri",
@@ -41,9 +41,9 @@
 		"@a11y-ui/core": "1.0.0-rc.13"
 	},
 	"devDependencies": {
-		"@types/node": "18.6.1",
+		"@types/node": "18.7.14",
 		"rimraf": "3.0.2",
-		"typescript": "4.7.4"
+		"typescript": "4.8.2"
 	},
 	"files": [
 		"cjs",

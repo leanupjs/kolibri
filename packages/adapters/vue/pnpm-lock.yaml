@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@babel/types': 7.18.8
-  '@leanup/kolibri-components': 1.0.0-rc.0
+  '@leanup/kolibri-components': 1.0.0-rc.1
   '@leanup/form': 1.3.22
   '@types/minimatch': 3.0.5
   '@types/minimist': 1.2.2
@@ -14,7 +14,7 @@ specifiers:
 
 devDependencies:
   '@babel/types': 7.18.8
-  '@leanup/kolibri-components': 1.0.0-rc.0_@leanup+form@1.3.22
+  '@leanup/kolibri-components': 1.0.0-rc.1_@leanup+form@1.3.22
   '@leanup/form': 1.3.22
   '@types/minimatch': 3.0.5
   '@types/minimist': 1.2.2
@@ -52,7 +52,7 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@a11y-ui/core/1.0.0-rc.0:
+  /@a11y-ui/core/1.0.0-rc.1:
     resolution: { integrity: sha512-JibWvYc8+XckLr2Ep2QtaTpeqkb3Bv87dBNZXKu1VFYz79UVYELfZDRzQ79Ln1Ql19By7IU0e4FlchSruHGkgw== }
     dependencies:
       '@a11y-ui/core': 1.0.0-rc.13
@@ -60,20 +60,20 @@ packages:
       rxjs: 7.5.5
     dev: true
 
-  /@leanup/kolibri-components/1.0.0-rc.0_@leanup+form@1.3.22:
+  /@leanup/kolibri-components/1.0.0-rc.1_@leanup+form@1.3.22:
     resolution: { integrity: sha512-uxpeonNb2dRJN1NaWLKcHaOasNgcoUpMKB1P8zvyTUQD3Cho1imuEVDGtwb8GKwkMTrhSPmm5fOJ4b1eh7NT3Q== }
     peerDependencies:
       '@leanup/form': '>=1.2 && <2'
     dependencies:
-      '@leanup/kolibri-schema': 1.0.0-rc.0
+      '@leanup/kolibri-schema': 1.0.0-rc.1
       '@leanup/form': 1.3.22
       '@leanup/lib': 1.3.22
     dev: true
 
-  /@leanup/kolibri-schema/1.0.0-rc.0:
+  /@leanup/kolibri-schema/1.0.0-rc.1:
     resolution: { integrity: sha512-FL1pcqBMUygFetw+cPb14iKy979/iitlDGwp5FOSRrAZuZbjV1MYO3JNEPWsQlCMEBSrWTV0Z7MXexi4Ro3Msw== }
     dependencies:
-      '@a11y-ui/core': 1.0.0-rc.0
+      '@a11y-ui/core': 1.0.0-rc.1
     dev: true
 
   /@leanup/form/1.3.22:

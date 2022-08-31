@@ -1,3 +1,3 @@
-import { LeanInputAdapter } from './input-adapter/component';
+import { LeanInputAdapterOpen } from './input-adapter/component';
 
-export const COMPONENTS = [LeanInputAdapter];
+export const COMPONENTS = [LeanInputAdapterOpen];

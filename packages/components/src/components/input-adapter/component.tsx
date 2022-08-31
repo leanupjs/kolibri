@@ -9,6 +9,31 @@ const DEFAULT_INPUT_CONTROL: InputControl = new InputControl('unknown', {
 	label: '',
 });
 
+type AssignedNode = {
+	_checked: boolean;
+	_disabled: boolean;
+	_error: string;
+	_id: string;
+	_name: string;
+	_value: string;
+	_on: unknown;
+	_required: boolean;
+} & Node;
+
+const KOL_TAG_NAMES = [
+	'KOL-INPUT-CHECKBOX',
+	'KOL-INPUT-COLOR',
+	'KOL-INPUT-EMAIL',
+	'KOL-INPUT-FILE',
+	'KOL-INPUT-NUMBER',
+	'KOL-INPUT-PASSWORD',
+	'KOL-INPUT-RANGE',
+	'KOL-INPUT-RADIO',
+	'KOL-INPUT-TEXT',
+	'KOL-SELECT',
+	'KOL-TEXTAREA',
+];
+
 /**
  * API
  */
@@ -31,9 +56,9 @@ type States = Generic.Element.Members<RequiredStates, OptionalStates>;
 
 @Component({
 	tag: 'lean-input-adapter',
-	shadow: true,
+	shadow: false,
 })
-export class LeanInputAdapter implements Generic.Element.ComponentApi<RequiredProps, OptionalProps, RequiredStates, OptionalStates> {
+export class LeanInputAdapterOpen implements Generic.Element.ComponentApi<RequiredProps, OptionalProps, RequiredStates, OptionalStates> {
 	private hostElement?: HTMLElement;
 
 	/**
@@ -122,7 +147,6 @@ export class LeanInputAdapter implements Generic.Element.ComponentApi<RequiredPr
 	};
 
 	private onChange = (_event: Event, value: unknown): void => {
-		console.log('LeanInputAdapter', _event, value);
 		if (typeof this.state._control === 'object') {
 			this.state._control.viewValue = value;
 		}
@@ -131,55 +155,29 @@ export class LeanInputAdapter implements Generic.Element.ComponentApi<RequiredPr
 		}
 	};
 
-	private propagateControl(el: HTMLElement, selector: string) {
-		el.querySelectorAll<
-			{
-				_checked: boolean;
-				_disabled: boolean;
-				_error: string;
-				_id: string;
-				_name: string;
-				_value: string;
-				_on: unknown;
-				_readOnly: boolean;
-				_required: boolean;
-			} & HTMLElement
-		>(selector).forEach((input) => {
-			if (input instanceof HTMLElement) {
-				input._checked = this.state._control.value === true;
-				input._disabled = this.state._control.disabled === true;
-				input._error = typeof this.state._control.error === 'string' && this.state._control.error.length > 0 ? this.state._control.error : '';
-				input._id = this.state._control.id;
-				input._name = this.state._control.name;
-				input._value = this.state._control.viewValue as InputTypeOnOff;
-				input._on = {
-					...this.state._on,
-					onChange: this.onChange,
-				};
-				input._readOnly = this.state._control.readonly === true;
-				input._required = this.state._control.mandatory === true;
-				if (typeof this.state._control.label === 'string' && this.state._control.label.length > 0) {
-					input.innerText = this.state._control.label;
-				}
-			}
-		});
-	}
-
 	private syncControl = (): void => {
 		if (this.hostElement instanceof HTMLElement) {
-			this.propagateControl(this.hostElement, 'kol-input-checkbox');
-			this.propagateControl(this.hostElement, 'kol-input-color');
-			this.propagateControl(this.hostElement, 'kol-input-date');
-			this.propagateControl(this.hostElement, 'kol-input-email');
-			this.propagateControl(this.hostElement, 'kol-input-file');
-			this.propagateControl(this.hostElement, 'kol-input-number');
-			this.propagateControl(this.hostElement, 'kol-input-range');
-			this.propagateControl(this.hostElement, 'kol-input-text');
-			this.propagateControl(this.hostElement, 'kol-input-password');
-			this.propagateControl(this.hostElement, 'kol-input-radio');
-			this.propagateControl(this.hostElement, 'kol-input-radio-group');
-			this.propagateControl(this.hostElement, 'kol-select');
-			this.propagateControl(this.hostElement, 'kol-textarea');
+			const inputs = this.hostElement.childNodes as unknown as AssignedNode[] | null;
+			if (inputs) {
+				inputs.forEach((input) => {
+					if (input instanceof HTMLElement && KOL_TAG_NAMES.includes(input.tagName)) {
+						input._checked = this.state._control.value === true;
+						input._disabled = this.state._control.disabled === true;
+						input._error = typeof this.state._control.error === 'string' && this.state._control.error.length > 0 ? this.state._control.error : '';
+						input._id = this.state._control.id;
+						input._name = this.state._control.name;
+						input._value = this.state._control.viewValue as InputTypeOnOff;
+						input._on = {
+							...this.state._on,
+							onChange: this.onChange,
+						};
+						input._required = this.state._control.mandatory === true;
+						if (typeof this.state._control.label === 'string' && this.state._control.label.length > 0) {
+							input.innerText = this.state._control.label;
+						}
+					}
+				});
+			}
 		}
 	};
 
