@@ -1,6 +1,6 @@
 {
 	"name": "@leanup/kolibri-solid",
-	"version": "1.0.0-rc.3",
+	"version": "1.0.0-rc.4",
 	"license": "EUPL-1.2",
 	"homepage": "https://github.com/leanupjs/kolibri#readme",
 	"repository": "https://github.com/leanupjs/kolibri",
@@ -41,7 +41,7 @@
 	},
 	"devDependencies": {
 		"@kolibri/lib": "1.1.6-rc.4",
-		"@leanup/kolibri-components": "1.0.0-rc.3",
+		"@leanup/kolibri-components": "1.0.0-rc.4",
 		"@leanup/form": "1.3.31",
 		"@types/minimatch": "5.1.2",
 		"@types/minimist": "1.2.2",
@@ -52,7 +52,7 @@
 		"typescript": "4.8.2"
 	},
 	"peerDependencies": {
-		"@leanup/kolibri-components": "1.0.0-rc.3",
+		"@leanup/kolibri-components": "1.0.0-rc.4",
 		"solid-js": ">=1.2.0"
 	},
 	"files": [
