@@ -9,7 +9,7 @@ import { watchString } from '../../utils/prop.validators';
 type RequiredProps = {
 	name: string;
 };
-type OptionalProps = {};
+type OptionalProps = unknown;
 export type Props = Generic.Element.Members<RequiredProps, OptionalProps>;
 
 type RequiredStates = {
