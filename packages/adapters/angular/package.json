@@ -29,7 +29,7 @@
 		"build": "npm run build:clean && npm run build:ngc",
 		"prepack": "npm run build",
 		":install": "pnpm i && pnpm update",
-		":publish": "npm run :install && npm publish --registry=http://localhost:4873 || true",
+		":publish": "npm run :install && npm publish --registry=http://localhost:4873",
 		":republish": "npm run :unpublish && npm run :publish",
 		":unpublish": "npm unpublish -f --registry=http://localhost:4873"
 	},

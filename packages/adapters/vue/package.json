@@ -27,9 +27,10 @@
 		"build:umd": "tsc -m umd --outDir umd",
 		"build": "npm run build:clean && npm run build:cjs && npm run build:esm && npm run build:types && npm run build:umd",
 		"prepack": "npm run build",
-		":install": "pnpm install",
-		":unpublish": "npm unpublish -f --registry=http://localhost:4873",
-		":publish": "npm publish --registry=http://localhost:4873 "
+		":install": "pnpm i && pnpm update",
+		":publish": "npm run :install && npm publish --registry=http://localhost:4873",
+		":republish": "npm run :unpublish && npm run :publish",
+		":unpublish": "npm unpublish -f --registry=http://localhost:4873"
 	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
