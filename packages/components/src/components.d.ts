@@ -22,6 +22,12 @@ export namespace Components {
          */
         "_on"?: InputTypeOnDefault;
     }
+    interface LeanTestClosed {
+        "_name": string;
+    }
+    interface LeanTestOpen {
+        "_name": string;
+    }
 }
 declare global {
     interface HTMLLeanInputAdapterElement extends Components.LeanInputAdapter, HTMLStencilElement {
@@ -30,8 +36,22 @@ declare global {
         prototype: HTMLLeanInputAdapterElement;
         new (): HTMLLeanInputAdapterElement;
     };
+    interface HTMLLeanTestClosedElement extends Components.LeanTestClosed, HTMLStencilElement {
+    }
+    var HTMLLeanTestClosedElement: {
+        prototype: HTMLLeanTestClosedElement;
+        new (): HTMLLeanTestClosedElement;
+    };
+    interface HTMLLeanTestOpenElement extends Components.LeanTestOpen, HTMLStencilElement {
+    }
+    var HTMLLeanTestOpenElement: {
+        prototype: HTMLLeanTestOpenElement;
+        new (): HTMLLeanTestOpenElement;
+    };
     interface HTMLElementTagNameMap {
         "lean-input-adapter": HTMLLeanInputAdapterElement;
+        "lean-test-closed": HTMLLeanTestClosedElement;
+        "lean-test-open": HTMLLeanTestOpenElement;
     }
 }
 declare namespace LocalJSX {
@@ -49,8 +69,16 @@ declare namespace LocalJSX {
          */
         "_on"?: InputTypeOnDefault;
     }
+    interface LeanTestClosed {
+        "_name": string;
+    }
+    interface LeanTestOpen {
+        "_name": string;
+    }
     interface IntrinsicElements {
         "lean-input-adapter": LeanInputAdapter;
+        "lean-test-closed": LeanTestClosed;
+        "lean-test-open": LeanTestOpen;
     }
 }
 export { LocalJSX as JSX };
@@ -58,6 +86,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "lean-input-adapter": LocalJSX.LeanInputAdapter & JSXBase.HTMLAttributes<HTMLLeanInputAdapterElement>;
+            "lean-test-closed": LocalJSX.LeanTestClosed & JSXBase.HTMLAttributes<HTMLLeanTestClosedElement>;
+            "lean-test-open": LocalJSX.LeanTestOpen & JSXBase.HTMLAttributes<HTMLLeanTestOpenElement>;
         }
     }
 }

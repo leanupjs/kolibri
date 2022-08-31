@@ -58,7 +58,7 @@ type States = Generic.Element.Members<RequiredStates, OptionalStates>;
 	tag: 'lean-input-adapter',
 	shadow: false,
 })
-export class LeanInputAdapterOpen implements Generic.Element.ComponentApi<RequiredProps, OptionalProps, RequiredStates, OptionalStates> {
+export class LeanInputAdapter implements Generic.Element.ComponentApi<RequiredProps, OptionalProps, RequiredStates, OptionalStates> {
 	private hostElement?: HTMLElement;
 
 	/**

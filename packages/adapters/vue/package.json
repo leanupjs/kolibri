@@ -1,6 +1,6 @@
 {
 	"name": "@leanup/kolibri-vue",
-	"version": "1.0.0-rc.1",
+	"version": "1.0.0-rc.3",
 	"license": "EUPL-1.2",
 	"homepage": "https://github.com/leanupjs/kolibri#readme",
 	"repository": "https://github.com/leanupjs/kolibri",
@@ -28,7 +28,7 @@
 		"build": "npm run build:clean && npm run build:cjs && npm run build:esm && npm run build:types && npm run build:umd",
 		"prepack": "npm run build",
 		":install": "pnpm i && pnpm update",
-		":publish": "npm run :install && npm publish --registry=http://localhost:4873",
+		":publish": "npm run :install && npm publish",
 		":republish": "npm run :unpublish && npm run :publish",
 		":unpublish": "npm unpublish -f --registry=http://localhost:4873"
 	},
@@ -38,7 +38,7 @@
 	"devDependencies": {
 		"@babel/types": "7.18.8",
 		"@kolibri/lib": "1.1.2-rc.1",
-		"@leanup/kolibri-components": "1.0.0-rc.1",
+		"@leanup/kolibri-components": "1.0.0-rc.3",
 		"@leanup/form": "1.3.22",
 		"@types/minimatch": "5.1.1",
 		"@types/minimist": "1.2.2",
@@ -49,7 +49,7 @@
 		"typescript": "4.7.4"
 	},
 	"peerDependencies": {
-		"@leanup/kolibri-components": "1.0.0-rc.1",
+		"@leanup/kolibri-components": "1.0.0-rc.3",
 		"vue": ">=3"
 	},
 	"files": [

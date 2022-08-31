@@ -1,6 +1,6 @@
 {
 	"name": "@leanup/kolibri-schema",
-	"version": "1.0.0-rc.1",
+	"version": "1.0.0-rc.3",
 	"license": "EUPL-1.2",
 	"homepage": "https://github.com/leanupjs/kolibri#readme",
 	"repository": "https://github.com/leanupjs/kolibri",
@@ -27,7 +27,7 @@
 		"build": "npm run build:cjs && npm run build:esm && npm run build:types && npm run build:umd",
 		"prepack": "npm run build:clean && npm run build",
 		":install": "pnpm i && pnpm update",
-		":publish": "npm run :install && npm publish --registry=http://localhost:4873",
+		":publish": "npm run :install && npm publish",
 		":republish": "npm run :unpublish && npm run :publish",
 		":unpublish": "npm unpublish -f --registry=http://localhost:4873"
 	},
@@ -39,7 +39,7 @@
 		"import": "./esm/index.js"
 	},
 	"dependencies": {
-		"@a11y-ui/core": "1.0.0-rc.13"
+		"@a11y-ui/core": "1.0.0-rc.15"
 	},
 	"devDependencies": {
 		"@types/node": "18.7.14",

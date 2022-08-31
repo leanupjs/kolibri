@@ -4,10 +4,10 @@ specifiers:
   '@angular/compiler': 14.2.0
   '@angular/compiler-cli': 14.2.0
   '@angular/core': 14.2.0
-  '@kolibri/lib': 1.1.6-rc.0
+  '@kolibri/lib': 1.1.6-rc.4
   '@leanup/form': 1.3.31
-  '@leanup/kolibri-components': 1.0.0-rc.1
-  '@types/minimatch': 5.1.1
+  '@leanup/kolibri-components': 1.0.0-rc.3
+  '@types/minimatch': 5.1.2
   '@types/minimist': 1.2.2
   '@types/node': 18.7.14
   '@types/normalize-package-data': 2.4.1
@@ -22,10 +22,10 @@ devDependencies:
   '@angular/compiler': 14.2.0_@angular+core@14.2.0
   '@angular/compiler-cli': 14.2.0_xtg6uy65dha672hxeojheuqzwy
   '@angular/core': 14.2.0_rxjs@7.5.6+zone.js@0.11.8
-  '@kolibri/lib': 1.1.6-rc.0_@leanup+form@1.3.31
+  '@kolibri/lib': 1.1.6-rc.4_@leanup+form@1.3.31
   '@leanup/form': 1.3.31
-  '@leanup/kolibri-components': 1.0.0-rc.1_yzuuqaxxwuilsdlu6hy5occs74
-  '@types/minimatch': 5.1.1
+  '@leanup/kolibri-components': 1.0.0-rc.3_5x5ev5koi3qyavcplzj7q3mifu
+  '@types/minimatch': 5.1.2
   '@types/minimist': 1.2.2
   '@types/node': 18.7.14
   '@types/normalize-package-data': 2.4.1
@@ -38,8 +38,8 @@ devDependencies:
 
 packages:
 
-  /@a11y-ui/core/1.0.0-rc.13:
-    resolution: {integrity: sha512-8D7QodJJlX47wc44NS20LOtA/fEO4qA0aAF/I+uL2Ua04c4EAaBBBttzdu31zt+qQTg4EVGgjvgncnKiX1yccg==}
+  /@a11y-ui/core/1.0.0-rc.14:
+    resolution: {integrity: sha512-G5QTF0Qnv51+s7TxtoNM9QuxGzs/SaVCWjV4Qrkgr9Ld23X257lvk7MmmdVhRPsjW/ZBdW1vloZOF6hZZ0BByA==}
     dependencies:
       '@leanup/lib': 1.3.20
     dev: true
@@ -332,28 +332,28 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@kolibri/core/1.1.6-rc.0:
-    resolution: {integrity: sha512-BsLY0k8+Ui0znMAI92AD0rap+jY07WbtfyxgRjSL46ml/ZRy4rC86vzm4zE5L9eoSOTPJiGuYKtW7ytTJUFbmg==}
+  /@kolibri/core/1.1.6-rc.4:
+    resolution: {integrity: sha512-U0JfywmyiQwLTyUHrmVTw4C4/zsQMhltCEJTvixKzPevIj3z//TT7NlHp8LPivclT/Nzsu3Q4Pwki1/jkQMV7A==}
     dependencies:
-      '@a11y-ui/core': 1.0.0-rc.13
+      '@a11y-ui/core': 1.0.0-rc.14
       '@leanup/lib': 1.3.31
       rxjs: 7.5.6
     dev: true
 
-  /@kolibri/lib/1.1.6-rc.0_@leanup+form@1.3.31:
-    resolution: {integrity: sha512-uzhnYIltxUdUrNndXVhMo8W9CXBAtMzgPrtmpK0R8ftZshDHkdeSpZU4rJEzklF/QZSxevn0dX7lXkcEOpatbw==}
+  /@kolibri/lib/1.1.6-rc.4_@leanup+form@1.3.31:
+    resolution: {integrity: sha512-N91xIPBkCYkOmLkYrYzLiZjkbNl2762sIqHEPrcZy3h5LQEybQ8D+gAp5RxxmMAXrUY62AsL/QeJTQNiH8sqpg==}
     peerDependencies:
       '@leanup/form': '>=1.2 && <2'
     dependencies:
-      '@kolibri/schema': 1.1.6-rc.0
+      '@kolibri/schema': 1.1.6-rc.4
       '@leanup/form': 1.3.31
       '@leanup/lib': 1.3.31
     dev: true
 
-  /@kolibri/schema/1.1.6-rc.0:
-    resolution: {integrity: sha512-pCHcNkpSHUoV1tNbCosNLDAm2HtTQdixn4Oqu/jTKkA1iD1CMVmYV4F+viY8A5DeGjFcla9TX8iMlXvo3CPjQw==}
+  /@kolibri/schema/1.1.6-rc.4:
+    resolution: {integrity: sha512-v/VOg98o6HUYggtlyAGpk/EuG8up0WZUCjyAvt5+FlogDglt0TOflcRn+lO1WB972IBkdfnD7UH/A2n13J6YGg==}
     dependencies:
-      '@kolibri/core': 1.1.6-rc.0
+      '@kolibri/core': 1.1.6-rc.4
     dev: true
 
   /@leanup/form/1.3.31:
@@ -362,22 +362,22 @@ packages:
       '@leanup/lib': 1.3.31
     dev: true
 
-  /@leanup/kolibri-components/1.0.0-rc.1_yzuuqaxxwuilsdlu6hy5occs74:
-    resolution: {integrity: sha512-rVLoCx8HNG6ZrDir4yVoWUt2zyQvQpFxfjYFDFPARxpZ1FuR1J7ohDmkDvqORRXifO89riEF7Ov5PCkuPR/zOg==}
+  /@leanup/kolibri-components/1.0.0-rc.3_5x5ev5koi3qyavcplzj7q3mifu:
+    resolution: {integrity: sha512-mcCc7s/4LyN3mG7qrmnHlL7CuDr80zOY4FLn6InbncTGX4/sMfnz/z/t+imIJyGQ2Fgx53baFGls5cA0Wq1gKg==}
     peerDependencies:
       '@kolibri/lib': '>=1.1 && <2'
       '@leanup/form': '>=1.2 && <2'
     dependencies:
-      '@kolibri/lib': 1.1.6-rc.0_@leanup+form@1.3.31
+      '@kolibri/lib': 1.1.6-rc.4_@leanup+form@1.3.31
       '@leanup/form': 1.3.31
-      '@leanup/kolibri-schema': 1.0.0-rc.1
+      '@leanup/kolibri-schema': 1.0.0-rc.3
       '@leanup/lib': 1.3.31
     dev: true
 
-  /@leanup/kolibri-schema/1.0.0-rc.1:
-    resolution: {integrity: sha512-Z9VIAJKNM1S8PJML7lBhTDiZtH+cbJkNyp0JpOoeL4S0ANlWCMThPTGgPfEym1xoOJZ0DITRksKx5LCWIuiRfg==}
+  /@leanup/kolibri-schema/1.0.0-rc.3:
+    resolution: {integrity: sha512-pU2JfxZIVLXMQgLMvddMARv4nJ+pcy1Geox207WGFLSFlgjmK69UV0RYmr0ewro0mNn3t2d0kGj3A8Q3U67mfA==}
     dependencies:
-      '@a11y-ui/core': 1.0.0-rc.13
+      '@a11y-ui/core': 1.0.0-rc.14
     dev: true
 
   /@leanup/lib/1.3.20:
@@ -394,8 +394,8 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /@types/minimatch/5.1.1:
-    resolution: {integrity: sha512-v55NF6Dz0wrj14Rn8iEABTWrhYRmgkJYuokduunSiq++t3hZ9VZ6dvcDt+850Pm5sGJZk8RaHzkFCXPxVINZ+g==}
+  /@types/minimatch/5.1.2:
+    resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
     dev: true
 
   /@types/minimist/1.2.2:
@@ -465,14 +465,14 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001385
-      electron-to-chromium: 1.4.237
+      caniuse-lite: 1.0.30001387
+      electron-to-chromium: 1.4.238
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5_browserslist@4.21.3
     dev: true
 
-  /caniuse-lite/1.0.30001385:
-    resolution: {integrity: sha512-MpiCqJGhBkHgpyimE9GWmZTnyHyEEM35u115bD3QBrXpjvL/JgcP8cUhKJshfmg4OtEHFenifcK5sZayEw5tvQ==}
+  /caniuse-lite/1.0.30001387:
+    resolution: {integrity: sha512-fKDH0F1KOJvR+mWSOvhj8lVRr/Q/mc5u5nabU2vi1/sgvlSqEsE8dOq0Hy/BqVbDkCYQPRRHB1WRjW6PGB/7PA==}
     dev: true
 
   /chalk/2.4.2:
@@ -555,8 +555,8 @@ packages:
     engines: {node: '>= 0.6.0'}
     dev: true
 
-  /electron-to-chromium/1.4.237:
-    resolution: {integrity: sha512-vxVyGJcsgArNOVUJcXm+7iY3PJAfmSapEszQD1HbyPLl0qoCmNQ1o/EX3RI7Et5/88In9oLxX3SGF8J3orkUgA==}
+  /electron-to-chromium/1.4.238:
+    resolution: {integrity: sha512-Vcw+jaLrdCj6Ds4p4FpVYn8UBa+DSRt4FwO5r6+6xifKbeRQ/MsC0vYOjLYkz4JJGDi/wZkjrxuZULn/E69w9Q==}
     dev: true
 
   /emoji-regex/8.0.0:
