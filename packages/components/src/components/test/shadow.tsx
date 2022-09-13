@@ -9,6 +9,10 @@ export class LeanTestClosed implements Props {
 	@Prop() public _name!: string;
 
 	public render(): JSX.Element {
-		return <lean-test-open _name={this._name}></lean-test-open>;
+		return (
+			<lean-test-open _name={this._name}>
+				<slot />
+			</lean-test-open>
+		);
 	}
 }
