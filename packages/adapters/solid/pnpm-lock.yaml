@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@leanup/form': 1.3.35
-  '@leanup/kolibri-components': 1.0.0
+  '@leanup/kolibri-components': 1.0.1-rc.0
   '@public-ui/components': 1.1.7-rc.8
   '@types/minimatch': 5.1.2
   '@types/minimist': 1.2.2
@@ -14,7 +14,7 @@ specifiers:
 
 devDependencies:
   '@leanup/form': 1.3.35
-  '@leanup/kolibri-components': 1.0.0_@leanup+form@1.3.35
+  '@leanup/kolibri-components': 1.0.1-rc.0_f26vaqrhupdyzwfpntjtavb6uq
   '@public-ui/components': 1.1.7-rc.8_@leanup+form@1.3.35
   '@types/minimatch': 5.1.2
   '@types/minimist': 1.2.2
@@ -38,13 +38,14 @@ packages:
       '@leanup/lib': 1.3.35
     dev: true
 
-  /@leanup/kolibri-components/1.0.0_@leanup+form@1.3.35:
-    resolution: {integrity: sha512-IIFQeJOHuAr7KTrfwu0qioT42XXJKH29Io3jjab4xsr+VjJQ3PR+KuPAhFpTYjkRLlb7fQ2Mip1AG7ybgdAxjw==}
+  /@leanup/kolibri-components/1.0.1-rc.0_f26vaqrhupdyzwfpntjtavb6uq:
+    resolution: {integrity: sha512-gEbDX7VER/HhtMy1m8WA2qm21VFL+MLRss0R+OJaH5rLfVqxGaS+owxgr8TohSCSTn87Fjd6ITFjBEfMzzXMfg==}
     peerDependencies:
-      '@kolibri/lib': '>=1.1 && <2'
       '@leanup/form': '>=1.2 && <2'
+      '@public-ui/components': '>=1.1 && <2'
     dependencies:
       '@leanup/form': 1.3.35
+      '@public-ui/components': 1.1.7-rc.8_@leanup+form@1.3.35
     dev: true
 
   /@leanup/lib/1.3.20:

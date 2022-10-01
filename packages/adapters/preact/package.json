@@ -28,7 +28,7 @@
 		"build": "npm run build:clean && npm run build:cjs && npm run build:esm && npm run build:types && npm run build:umd",
 		"prepack": "npm run build",
 		":install": "pnpm i && pnpm update",
-		":publish": "npm run :install && npm publish",
+		":publish": "npm run :install && npm publish || true",
 		":republish": "npm run :unpublish && npm run :publish",
 		":unpublish": "npm unpublish -f --registry=http://localhost:4873"
 	},
