@@ -4,7 +4,7 @@ specifiers:
   '@angular/compiler': 14.2.0
   '@angular/compiler-cli': 14.2.0
   '@angular/core': 14.2.0
-  '@kolibri/lib': 1.1.6-rc.4
+  '@public-ui/components': 1.1.6-rc.4
   '@leanup/form': 1.3.31
   '@leanup/kolibri-components': 1.0.0
   '@types/minimatch': 5.1.2
@@ -22,7 +22,7 @@ devDependencies:
   '@angular/compiler': 14.2.0_@angular+core@14.2.0
   '@angular/compiler-cli': 14.2.0_xtg6uy65dha672hxeojheuqzwy
   '@angular/core': 14.2.0_rxjs@7.5.6+zone.js@0.11.8
-  '@kolibri/lib': 1.1.6-rc.4_@leanup+form@1.3.31
+  '@public-ui/components': 1.1.6-rc.4_@leanup+form@1.3.31
   '@leanup/form': 1.3.31
   '@leanup/kolibri-components': 1.0.0_5x5ev5koi3qyavcplzj7q3mifu
   '@types/minimatch': 5.1.2
@@ -345,7 +345,7 @@ packages:
       rxjs: 7.5.6
     dev: true
 
-  /@kolibri/lib/1.1.6-rc.4_@leanup+form@1.3.31:
+  /@public-ui/components/1.1.6-rc.4_@leanup+form@1.3.31:
     resolution: { integrity: sha512-N91xIPBkCYkOmLkYrYzLiZjkbNl2762sIqHEPrcZy3h5LQEybQ8D+gAp5RxxmMAXrUY62AsL/QeJTQNiH8sqpg== }
     peerDependencies:
       '@leanup/form': '>=1.2 && <2'
@@ -370,10 +370,10 @@ packages:
   /@leanup/kolibri-components/1.0.0_5x5ev5koi3qyavcplzj7q3mifu:
     resolution: { integrity: sha512-NK6dP623rXwtYXJgtG+S61yBfns+RcUPvBS/yCKInWD/m+R/b9fPb6TT+m/xmQBcvDV8sQYYi/eWe92tZb0hjQ== }
     peerDependencies:
-      '@kolibri/lib': '>=1.1 && <2'
+      '@public-ui/components': '>=1.1 && <2'
       '@leanup/form': '>=1.2 && <2'
     dependencies:
-      '@kolibri/lib': 1.1.6-rc.4_@leanup+form@1.3.31
+      '@public-ui/components': 1.1.6-rc.4_@leanup+form@1.3.31
       '@leanup/form': 1.3.31
       '@leanup/kolibri-schema': 1.0.0
       '@leanup/lib': 1.3.31
