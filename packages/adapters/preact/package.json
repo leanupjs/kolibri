@@ -47,7 +47,7 @@
 		"@types/minimist": "1.2.2",
 		"@types/node": "18.0.4",
 		"@types/normalize-package-data": "2.4.1",
-		"preact": "10.10.0",
+		"preact": "10.11.2",
 		"typescript": "4.7.4"
 	},
 	"peerDependencies": {
