@@ -1,6 +1,6 @@
 {
 	"name": "@leanup/kolibri-components",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Das Components-Modul beinhaltet alle zur Komponenten-Bibliothek gehörenden Webcomponents.",
 	"license": "EUPL-1.2",
 	"homepage": "https://github.com/leanupjs/kolibri#readme",
@@ -58,7 +58,7 @@
 		":unpublish": "npm unpublish -f --registry=http://localhost:4873"
 	},
 	"dependencies": {
-		"@leanup/kolibri-schema": "1.0.2",
+		"@leanup/kolibri-schema": "1.0.3",
 		"@leanup/lib": "1.3.35"
 	},
 	"devDependencies": {
@@ -100,7 +100,7 @@
 		"typescript": "4.8.4"
 	},
 	"peerDependencies": {
-		"@public-ui/components": ">=1.1 <2",
+		"@public-ui/components": ">=1 <2",
 		"@leanup/form": ">=1.2 <2"
 	},
 	"files": [
