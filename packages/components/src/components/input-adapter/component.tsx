@@ -161,20 +161,24 @@ export class LeanInputAdapter implements Generic.Element.ComponentApi<RequiredPr
 			const inputs = this.hostElement.childNodes as unknown as AssignedNode[] | null;
 			if (inputs) {
 				inputs.forEach((input) => {
-					if (input instanceof HTMLElement && KOL_TAG_NAMES.includes(input.tagName)) {
-						input._checked = this.state._control.value === true;
-						input._disabled = this.state._control.disabled === true;
-						input._error = typeof this.state._control.error === 'string' && this.state._control.error.length > 0 ? this.state._control.error : '';
-						input._id = this.state._control.id;
-						input._name = this.state._control.name;
-						input._value = this.state._control.viewValue as InputTypeOnOff;
-						input._on = {
-							...this.state._on,
-							onChange: this.onChange,
-						};
-						input._required = this.state._control.mandatory === true;
-						if (typeof this.state._control.label === 'string' && this.state._control.label.length > 0) {
-							input.innerText = this.state._control.label;
+					if (input instanceof HTMLElement) {
+						if (KOL_TAG_NAMES.includes(input.tagName)) {
+							input._checked = this.state._control.value === true;
+							input._disabled = this.state._control.disabled === true;
+							input._error = typeof this.state._control.error === 'string' && this.state._control.error.length > 0 ? this.state._control.error : '';
+							input._id = this.state._control.id;
+							input._name = this.state._control.name;
+							input._value = this.state._control.viewValue as InputTypeOnOff;
+							input._on = {
+								...this.state._on,
+								onChange: this.onChange,
+							};
+							input._required = this.state._control.mandatory === true;
+							if (typeof this.state._control.label === 'string' && this.state._control.label.length > 0) {
+								input.innerText = this.state._control.label;
+							}
+						} else {
+							console.warn(`Slotted input component (${input.tagName}) not detected. Valid tag names are: ${KOL_TAG_NAMES.join(', ')}`);
 						}
 					}
 				});
