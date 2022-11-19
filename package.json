@@ -10,7 +10,7 @@
 		"pack": "lerna exec --stream -- npm pack",
 		"postinstall": "lerna exec --stream -- pnpm :install",
 		"prepare": "rimraf .husky && husky install && husky add .husky/commit-msg \"npx commitlint --edit $1\" && husky add .husky/pre-commit \"npx lerna run lint\" && husky add .husky/pre-commit \"npx lerna run format\" && husky add .husky/pre-commit \"pnpm ts-prune\"",
-		"publish": "lerna exec --stream -- pnpm publish",
+		"publish": "lerna exec --stream -- npm publish --access public",
 		"ts-prune": "lerna exec --stream -- ts-prune src",
 		"reinstall": "pnpm clean:pnpm && pnpm i",
 		"update": "pnpm ncu:minor && pnpm i && pnpm ncu:major",

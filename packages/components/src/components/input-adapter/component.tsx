@@ -4,6 +4,7 @@ import { Component, h, Host, JSX, Prop, State, Watch } from '@stencil/core';
 import { Generic } from '@a11y-ui/core';
 import { setState, watchNumber } from '../../utils/prop.validators';
 import { InputTypeOnDefault, InputTypeOnOff } from '@public-ui/components/dist/types/types/input/types';
+import { Log } from '@leanup/lib';
 
 const DEFAULT_INPUT_CONTROL: InputControl = new InputControl('unknown', {
 	label: '',
@@ -13,7 +14,6 @@ type AssignedNode = {
 	_checked: boolean;
 	_disabled: boolean;
 	_error: string;
-	_id: string;
 	_name: string;
 	_value: string;
 	_on: unknown;
@@ -166,7 +166,6 @@ export class LeanInputAdapter implements Generic.Element.ComponentApi<RequiredPr
 							input._checked = this.state._control.value === true;
 							input._disabled = this.state._control.disabled === true;
 							input._error = typeof this.state._control.error === 'string' && this.state._control.error.length > 0 ? this.state._control.error : '';
-							input._id = this.state._control.id;
 							input._name = this.state._control.name;
 							input._value = this.state._control.viewValue as InputTypeOnOff;
 							input._on = {
@@ -178,7 +177,7 @@ export class LeanInputAdapter implements Generic.Element.ComponentApi<RequiredPr
 								input.innerText = this.state._control.label;
 							}
 						} else {
-							console.warn(`Slotted input component (${input.tagName}) not detected. Valid tag names are: ${KOL_TAG_NAMES.join(', ')}`);
+							Log.warn(`Slotted input component (${input.tagName}) not detected. Valid tag names are: ${KOL_TAG_NAMES.join(', ')}`, input);
 						}
 					}
 				});
