@@ -1,5 +1,5 @@
 {
 	"packages": ["packages/adapters/angular", "packages/adapters/react", "packages/adapters/solid", "packages/components", "packages/schema"],
 	"useNx": false,
-	"version": "1.0.4"
+	"version": "1.0.5"
 }
