@@ -34,7 +34,7 @@ jobs:
           find packages -name "*.ts" -type f -exec sed -i -e "s/@leanup/kolibri-@${{env.scope}}/g" {} +
           find packages -name "*.tsx" -type f -exec sed -i -e "s/@leanup/kolibri-@${{env.scope}}/g" {} +
           git diff
-      - uses: pnpm/action-setup@v2.2.2
+      - uses: pnpm/action-setup@v2.2.4
         with:
           version: 7
       - uses: actions/setup-node@v3
