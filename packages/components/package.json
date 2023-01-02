@@ -70,7 +70,7 @@
 		"@stencil/solid-output-target": "file:node_martin/stencil-solid-output-target-0.0.1.tgz",
 		"@stencil/svelte-output-target": "0.0.3",
 		"@stencil/vue-output-target": "0.6.2",
-		"@types/jest": "26.0.24",
+		"@types/jest": "29.2.5",
 		"@types/node": "18.11.9",
 		"@types/puppeteer": "7.0.4",
 		"@typescript-eslint/eslint-plugin": "5.43.0",
