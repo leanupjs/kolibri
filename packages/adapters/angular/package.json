@@ -43,7 +43,7 @@
 	"devDependencies": {
 		"@angular/compiler-cli": "15.0.0",
 		"@angular/compiler": "15.0.0",
-		"@angular/core": "15.0.0",
+		"@angular/core": "15.1.5",
 		"@public-ui/core": "1.1.11-rc.2",
 		"@public-ui/components": "1.1.11-rc.2",
 		"@leanup/kolibri-components": "1.0.5",
