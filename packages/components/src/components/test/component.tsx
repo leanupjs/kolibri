@@ -1,6 +1,6 @@
 import { Component, h, Host, JSX, Prop, State, Watch } from '@stencil/core';
 
-import { Generic } from '@a11y-ui/core';
+import { Generic } from 'adopted-style-sheets';
 import { watchString } from '../../utils/prop.validators';
 
 /**

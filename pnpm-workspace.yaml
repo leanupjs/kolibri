@@ -1,0 +1,8 @@
+packages:
+  - 'packages/adapters/angular/*'
+  - 'packages/adapters/preact*'
+  - 'packages/adapters/react*'
+  - 'packages/adapters/solid*'
+  - 'packages/adapters/vue'
+  - 'packages/components'
+  - 'packages/schema'

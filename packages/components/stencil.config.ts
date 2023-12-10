@@ -5,8 +5,6 @@ import { Config } from '@stencil/core';
 import { JsonDocs, OutputTarget } from '@stencil/core/internal';
 import { reactOutputTarget } from '@stencil/react-output-target';
 import { solidOutputTarget } from '@stencil/solid-output-target';
-// import { vueOutputTarget } from '@stencil/vue-output-target';
-// import { svelteOutputTarget } from '@stencil/svelte-output-target';
 
 const TAGS = ['lean-input-adapter'];
 const EXCLUDE_TAGS = [];
@@ -112,7 +110,6 @@ if (process.env.NODE_ENV === 'production') {
 			componentCorePackage: '@leanup/kolibri-components',
 			excludeComponents: EXCLUDE_TAGS,
 			directivesProxyFile: '../adapters/angular/src/components.ts',
-			includeImportCustomElements: false,
 		}),
 		// preactOutputTarget({
 		//   componentCorePackage: '@leanup/kolibri-components',

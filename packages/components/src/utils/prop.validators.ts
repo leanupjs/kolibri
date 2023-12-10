@@ -1,7 +1,7 @@
 import { Log } from '@leanup/lib';
 import { querySelectorAll } from 'query-selector-all-shadow-root';
 import { querySelector } from 'query-selector-shadow-root';
-import { Generic } from '@a11y-ui/core';
+import { Generic } from 'adopted-style-sheets';
 import { getDocument } from './dev.utils';
 
 // https://regex101.com/r/lSYLO9/1

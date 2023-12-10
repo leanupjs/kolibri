@@ -39,12 +39,12 @@
 		"import": "./esm/index.js"
 	},
 	"dependencies": {
-		"@a11y-ui/core": "1.0.0-rc.15"
+		"adopted-style-sheets": "1.1.0"
 	},
 	"devDependencies": {
-		"@types/node": "18.11.9",
+		"@types/node": "20.10.4",
 		"rimraf": "3.0.2",
-		"typescript": "4.9.3"
+		"typescript": "5.3.3"
 	},
 	"files": [
 		"cjs",
