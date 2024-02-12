@@ -25,7 +25,7 @@
 		"build:tsc": "tsc -p .",
 		"build:types": "tsc -d --outDir types && rimraf types/*.js types/*.map types/**/*.js types/**/*.map",
 		"build:umd": "tsc -m umd --outDir umd",
-		"build": "npm run build:clean && npm run build:cjs && npm run build:esm && npm run build:types && npm run build:umd",
+		"xbuild": "npm run build:clean && npm run build:cjs && npm run build:esm && npm run build:types && npm run build:umd",
 		"prepack": "npm run build",
 		":install": "pnpm i && pnpm update",
 		":publish": "npm run :install && npm publish || true",

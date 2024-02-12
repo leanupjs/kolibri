@@ -102,8 +102,8 @@ export const setState = <T>(component: Generic.Element.Component, propName: stri
 export const logWarn = (component: Generic.Element.Component, propName: string, value: unknown, requiredGeneric: Set<string | null | undefined>): void => {
 	Log.debug(
 		`[${component.constructor.name}] Der Property-Wert (${value as string}) für '${propName}' ist nicht valide. Folgende Werte sind erlaubt: ${Array.from(
-			requiredGeneric
-		).join(', ')}`
+			requiredGeneric,
+		).join(', ')}`,
 	);
 };
 
@@ -135,7 +135,7 @@ export const watchValidator = <T>(
 	validationFunction: (value?: T) => boolean,
 	requiredGeneric: Set<string | null | undefined>,
 	value?: T,
-	options: WatchOptions = {}
+	options: WatchOptions = {},
 ): void => {
 	if (validationFunction(value) && (options?.allowNull === undefined || options?.allowNull === false || value === null)) {
 		setState(component, propName, value, options?.hooks);
@@ -163,7 +163,7 @@ export const watchString = (component: Generic.Element.Component, propName: stri
 		(value): boolean => typeof value === 'string' && value.length >= (typeof options?.minLength === 'number' ? options?.minLength : 1),
 		new Set(['String (nicht leer)']),
 		value,
-		options
+		options,
 	);
 };
 
@@ -177,7 +177,7 @@ export const watchNumber = (component: Generic.Element.Component, propName: stri
 			(typeof options?.max === 'undefined' || (typeof options?.max === 'number' && value <= options.max)),
 		new Set(['Number']),
 		value,
-		options
+		options,
 	);
 };
 
@@ -187,7 +187,7 @@ export const watchJsonString = (
 	value?: number,
 	validator?: (value: unknown) => boolean,
 	strict = true,
-	options: WatchOptions = {}
+	options: WatchOptions = {},
 ): void => {
 	let parsedValue: unknown = null;
 
@@ -218,7 +218,7 @@ export const watchJsonArrayString = <T>(
 	itemValidation: (item: T) => boolean,
 	value?: T[] | string,
 	arrayValidation: (items: T[]) => boolean = (items: T[]) => items === items, // nochmal hirnen
-	options: WatchOptions = {}
+	options: WatchOptions = {},
 ): void => {
 	emptyStringByArrayHandler(value, () => {
 		objectObjectHandler(value, () => {
