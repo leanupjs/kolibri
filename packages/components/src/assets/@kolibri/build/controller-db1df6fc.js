@@ -1,4 +1,0 @@
-/*!
- * KoliBri - the accessible web component library
- */
-const e=(e={})=>{for(;e.form instanceof HTMLElement&&"FORM"!==e.form.tagName&&"KOL-FORM"!==e.form.tagName;)e.form=e.form.parentElement instanceof HTMLElement?e.form.parentElement:e.form.parentNode instanceof ShadowRoot?e.form.parentNode.host:null;if(e.form instanceof HTMLElement){const o=new SubmitEvent("submit",{bubbles:!0,cancelable:!0,submitter:e.ref});if("FORM"===e.form.tagName)e.form.dispatchEvent(o);else if("KOL-FORM"===e.form.tagName){const t=e.form;"object"==typeof t._on&&null!==typeof t._on&&"function"==typeof t._on.onSubmit&&t._on.onSubmit(o)}}};export{e as p};

@@ -62,7 +62,7 @@ Die Adapter-Komponente verwaltet folgende Properties automatisch, **die dann nic
 ```mermaid
 graph TD;
   lean-test-closed --> lean-test-open
-  style lean-test-open fill:#f9f,stroke:#333,stroke-width:4px
+  style lean-test-open stroke:#333,stroke-width:4px
 ```
 
 ---
