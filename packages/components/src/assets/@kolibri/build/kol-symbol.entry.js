@@ -1,4 +1,0 @@
-/*!
- * KoliBri - the accessible web component library
- */
-import{r as a,h as i,H as r}from"./index-5f2fc243.js";import{w as t}from"./prop.validators-65dada2e.js";import"./dev.utils-2cf8d1a6.js";import"./index.m-0a218bb8.js";import"./a11y.tipps-aa545fdc.js";import"./register-65f59344.js";const s=class{constructor(t){a(this,t),this.state={_ariaLabel:"Warnung",_symbol:"⚠"}}render(){return i(r,null,i("span",{"aria-label":this.state._ariaLabel,role:"term"},this.state._symbol))}validateAriaLabel(a){t(this,"_ariaLabel",a,{required:!0})}validateSymbol(a){t(this,"_symbol",a,{required:!0})}componentWillLoad(){this.validateAriaLabel(this._ariaLabel),this.validateSymbol(this._symbol)}static get watchers(){return{_ariaLabel:["validateAriaLabel"],_symbol:["validateSymbol"]}}};export{s as kol_symbol};

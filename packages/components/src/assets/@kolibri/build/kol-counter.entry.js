@@ -1,4 +1,0 @@
-/*!
- * KoliBri - the accessible web component library
- */
-import{r as t,h as o,H as n}from"./index-5f2fc243.js";const r=class{constructor(o){t(this,o),this.state={_count:0},this.inc=()=>{this.state={_count:this.state._count+1}},this.dec=()=>{this.state={_count:this.state._count-1}}}render(){return o(n,null,o("button",{onClick:this.dec},"-"),o("span",null,this.state._count),o("button",{onClick:this.inc},"+"))}};r.style={default:"*{font-size:200%}span{width:4rem;display:inline-block;text-align:center}button{background-color:#490e8d;cursor:pointer;width:4rem;height:4rem;border:none;border-radius:10px;background-color:seagreen;color:white}"};export{r as kol_counter};

@@ -3,8 +3,8 @@ import { Component, h, Host, JSX, Prop, State, Watch } from '@stencil/core';
 
 import { Generic } from 'adopted-style-sheets';
 import { setState, watchNumber } from '../../utils/prop.validators';
-import { InputTypeOnDefault, InputTypeOnOff } from '@public-ui/components/dist/types/types/input/types';
 import { Log } from '@leanup/lib';
+import { InputTypeOnDefault, InputTypeOnOff } from '@public-ui/schema';
 
 const DEFAULT_INPUT_CONTROL: InputControl = new InputControl('unknown', {
 	label: '',

@@ -1,10 +1,12 @@
-import { promises as fs } from 'fs';
+import { promises as fsPromises } from 'fs';
 
 import { angularOutputTarget } from '@stencil/angular-output-target';
 import { Config } from '@stencil/core';
 import { JsonDocs, OutputTarget } from '@stencil/core/internal';
+import { postcss } from '@stencil/postcss';
 import { reactOutputTarget } from '@stencil/react-output-target';
 import { solidOutputTarget } from '@stencil/solid-output-target';
+import { vueOutputTarget } from '@stencil/vue-output-target';
 
 const TAGS = ['lean-input-adapter'];
 const EXCLUDE_TAGS = [];
@@ -77,8 +79,10 @@ async function generateCustomElementsJson(docsData: JsonDocs) {
 		})),
 	};
 
-	await fs.writeFile('./custom-elements.json', JSON.stringify(jsonData, null, 2));
+	await fsPromises.writeFile('./custom-elements.json', JSON.stringify(jsonData, null, 2));
 }
+
+// const developmentHtmlFiles = fs.readdirSync(path.join(__dirname, 'src/dev')).filter((fileName: string) => fileName.endsWith('.html'));
 
 let outputTargets: OutputTarget[] = [
 	{
@@ -96,6 +100,10 @@ let outputTargets: OutputTarget[] = [
 			{
 				src: 'assets',
 			},
+			// {
+			// 	src: 'dev.html',
+			// },
+			// ...developmentHtmlFiles.map((fileName) => ({ src: path.join('dev', fileName) })),
 		],
 	},
 	// {
@@ -109,43 +117,38 @@ if (process.env.NODE_ENV === 'production') {
 		angularOutputTarget({
 			componentCorePackage: '@leanup/kolibri-components',
 			excludeComponents: EXCLUDE_TAGS,
-			directivesProxyFile: '../adapters/angular/src/components.ts',
+			directivesProxyFile: './adapters/angular/src/components.ts',
 		}),
-		// preactOutputTarget({
-		//   componentCorePackage: '@leanup/kolibri-components',
-		//   excludeComponents: EXCLUDE_TAGS,
-		//   proxiesFile: '../adapters/preact/src/adapter/index.ts',
-		//   includeDefineCustomElements: false,
-		// }),
 		reactOutputTarget({
 			componentCorePackage: '@leanup/kolibri-components',
 			excludeComponents: EXCLUDE_TAGS,
-			proxiesFile: '../adapters/react/src/adapter/index.ts',
+			proxiesFile: './adapters/react/src/index.ts',
 			includeDefineCustomElements: false,
 		}),
 		solidOutputTarget({
 			componentCorePackage: '@leanup/kolibri-components',
 			excludeComponents: EXCLUDE_TAGS,
-			proxiesFile: '../adapters/solid/src/adapter/index.ts',
+			proxiesFile: './adapters/solid/src/index.ts',
 			includeDefineCustomElements: false,
 		}),
-		// svelteOutputTarget({
-		// 	componentCorePackage: '@leanup/kolibri-components',
-		// 	excludeComponents: EXCLUDE_TAGS,
-		// 	proxiesFile: '../adapters/svelte/src/index.ts',
-		// 	includeDefineCustomElements: false,
-		// }),
-		// vueOutputTarget({
-		// 	componentCorePackage: '@leanup/kolibri-components',
-		// 	excludeComponents: EXCLUDE_TAGS,
-		// 	proxiesFile: '../adapters/vue/src/index.ts',
-		// 	includeDefineCustomElements: false,
-		// }),
+		vueOutputTarget({
+			componentCorePackage: '@leanup/kolibri-components',
+			excludeComponents: EXCLUDE_TAGS,
+			proxiesFile: './adapters/vue/src/index.ts',
+			includeDefineCustomElements: false,
+		}),
 		{
+			minify: true,
 			type: 'dist-custom-elements',
 		},
 		// {
+		// 	type: 'dist-custom-elements-bundle',
+		// 	externalRuntime: false,
+		// },
+		// {
+		// 	// https://stenciljs.com/docs/hydrate-app
 		// 	type: 'dist-hydrate-script',
+		// 	dir: './adapters/hydrate/dist',
 		// },
 		{
 			// https://stenciljs.com/docs/docs-vscode
@@ -171,16 +174,18 @@ if (process.env.NODE_ENV === 'production') {
 
 export const config: Config = {
 	// buildEs5: true,
-	// extras: {
-	//   cssVarsShim: true,
-	//   dynamicImportShim: true,
-	//   shadowDomShim: true,
-	//   safari10: true,
-	//   scriptDataOpts: true,
-	//   appendChildSlotFix: false,
-	//   cloneNodeFix: false,
-	//   slotChildNodesFix: true,
-	// },
+	// https://stenciljs.com/docs/config-extras
+	extras: {
+		// appendChildSlotFix: true,
+		// cloneNodeFix: true,
+		enableImportInjection: true,
+		// initializeNextTick: true,
+		// lifecycleDOMEvents: true,
+		// scopedSlotTextContentFix: true,
+		// scriptDataOpts: true,
+		// slotChildNodesFix: true,
+		// tagNameTransform: true,
+	},
 	// enableCache: true,
 	invisiblePrehydration: true,
 	hashFileNames: false,
@@ -190,7 +195,7 @@ export const config: Config = {
 	namespace: 'leanup-kolibri',
 	preamble: 'Leanup web component components',
 	outputTargets: outputTargets,
-	plugins: [],
+	plugins: [postcss()],
 	rollupPlugins: {
 		before: [],
 		after: [],

@@ -1,10 +1,12 @@
 /dist/
+/doc/**
 /loader/
+/public/
 /screenshot/
+/src/assets/@kolibri/
+/src/assets/@leanup/
 /www/
-cheat-sheet.html
 custom-elements.json
-jest-test-results.json
 lighthouse.report.html
 open-ui.json
 open-ui.json5
@@ -42,4 +44,3 @@ UserInterfaceState.xcuserstate
 
 # Allow
 !/node_martin/*.tgz
-!/src/types/

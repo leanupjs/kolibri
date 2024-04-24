@@ -1,5 +1,13 @@
 {
-	"packages": ["packages/adapters/angular", "packages/adapters/react", "packages/adapters/solid", "packages/components", "packages/schema"],
+	"packages": [
+		"packages/components",
+		"packages/components/adapters/angular",
+		"packages/components/adapters/preact",
+		"packages/components/adapters/react",
+		"packages/components/adapters/vue",
+		"packages/components/adapters/solid",
+		"packages/schema"
+	],
 	"useNx": false,
 	"version": "1.0.5"
 }

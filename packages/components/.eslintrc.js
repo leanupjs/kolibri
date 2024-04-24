@@ -7,19 +7,36 @@ const config = {
 	extends: [
 		'eslint:recommended',
 		// 'plugin:@stencil/recommended',
+		// 'plugin:@stencil-community/recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:@typescript-eslint/recommended-requiring-type-checking',
+		'plugin:prettier/recommended',
 	],
 	rules: {
-		// '@stencil/dependency-suggestions': 'warn',
-		// '@stencil/required-jsdoc': 'warn',
-		// '@stencil/strict-boolean-conditions': 'warn',
-		'@typescript-eslint/no-empty-interface': 'warn',
-		'@typescript-eslint/no-namespace': 'warn',
+		/**
+		 * Import types with `import type` instead of `import`.
+		 */
+		'@typescript-eslint/consistent-type-imports': 'warn',
+		/**
+		 * This rule is disabled because it is not possible to use the
+		 * `no-unsafe-assignment` rule without breaking the build.
+		 */
+		'@typescript-eslint/no-unsafe-assignment': 'warn',
+
+		/**
+		 * This setting is necessary because required and optional properties
+		 * and states build on each other in API design. If duplicate or redundant
+		 * types were not used, changes to base types would not be propagated
+		 * and would lead to errors.
+		 */
+		'@typescript-eslint/no-duplicate-type-constituents': 'off',
+		'@typescript-eslint/no-redundant-type-constituents': 'off',
+
+		/**
+		 * The HTML templates in TSX are recognized as any.
+		 */
 		'@typescript-eslint/no-unsafe-member-access': 'off',
 		'@typescript-eslint/no-unsafe-return': 'off',
-		// 'react/jsx-no-bind': 'warn',
-		'no-mixed-spaces-and-tabs': 'warn',
 	},
 	settings: {
 		react: {
@@ -43,12 +60,29 @@ config.overrides.push({
 	rules: {
 		'jsx-a11y/no-access-key': 'off',
 		// 'react/no-unused-state': 'error',
+
+		'jsx-a11y/label-has-associated-control': [
+			2,
+			{
+				depth: 3, // allow labels deeply nested into spans
+			},
+		],
+	},
+});
+config.overrides.push({
+	files: ['**/*.ts', '**/*.tsx'],
+	rules: {
+		/**
+		 * The typescript formatter used spaces and tabs in some cases.
+		 */
+		'no-mixed-spaces-and-tabs': 'off',
 	},
 });
 
 config.plugins = config.plugins || [];
 // config.plugins.push('react');
 config.plugins.push('jsx-a11y');
+config.plugins.push('no-loops');
 
 config.settings = {
 	react: {
