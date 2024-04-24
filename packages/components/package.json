@@ -42,7 +42,7 @@
 		"postinstall:kolibri": "rimraf \"src/assets/@kolibri\" && cpy \"node_modules/@public-ui/components/dist/kolibri/**/*\" \"src/assets/@kolibri\" --dot",
 		"postinstall:leanup": "rimraf \"src/assets/@leanup\" && cpy \"node_modules/@leanup/**/*\" \"src/assets/@leanup\" --dot",
 		"postpack": "mv package.bak.json package.json",
-		"prepack": "npm run build && cp package.json package.bak.json && rimraf dist/collection dist/collection dist/kolibri/assets/@kolibri dist/types/assets/@kolibri dist/kolibri/assets/@leanup dist/types/assets/@leanup && node scripts/anonymous.js && node scripts/minify.js",
+		"prepack": "npm run build && cp package.json package.bak.json && rimraf dist/collection dist/collection dist/kolibri/assets/@kolibri dist/types/assets/@kolibri dist/kolibri/assets/@leanup dist/types/assets/@leanup",
 		"xunused": "knip"
 	},
 	"dependencies": {

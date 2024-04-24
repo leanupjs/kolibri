@@ -47,10 +47,10 @@ Die Adapter-Komponente verwaltet folgende Properties automatisch, **die dann nic
 
 ## Properties
 
-| Property                | Attribute   | Description                                                                                       | Type                                                                                     | Default     |
-| ----------------------- | ----------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ----------- |
-| `_control` _(required)_ | --          | Gibt das Input-Control des Eingabefeldes an.                                                      | `InputControl`                                                                           | `undefined` |
-| `_debounce`             | `_debounce` | Gibt an wie viele Millisekunden das Rerendering beim Änderungen des Wertes verzögert werden soll. | `number \| undefined`                                                                    | `250`       |
-| `_on`                   | --          | Gibt die EventCallback-Funktionen für das Input-Event an.                                         | `InputTypeOnBlur & InputTypeOnClick & InputTypeOnChange & InputTypeOnFocus \| undefined` | `{}`        |
+| Property                | Attribute   | Description                                                                                       | Type                                                                                                        | Default     |
+| ----------------------- | ----------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------- |
+| `_control` _(required)_ | --          | Gibt das Input-Control des Eingabefeldes an.                                                      | `InputControl`                                                                                              | `undefined` |
+| `_debounce`             | `_debounce` | Gibt an wie viele Millisekunden das Rerendering beim Änderungen des Wertes verzögert werden soll. | `number \| undefined`                                                                                       | `250`       |
+| `_on`                   | --          | Gibt die EventCallback-Funktionen für das Input-Event an.                                         | `InputTypeOnBlur & InputTypeOnClick & InputTypeOnChange & InputTypeOnFocus & InputTypeOnInput \| undefined` | `{}`        |
 
 ---
