@@ -3,7 +3,7 @@ import { promises as fsPromises } from 'fs';
 import { angularOutputTarget } from '@stencil/angular-output-target';
 import { Config } from '@stencil/core';
 import { JsonDocs, OutputTarget } from '@stencil/core/internal';
-import { postcss } from '@stencil/postcss';
+import { postcss } from '@stencil-community/postcss';
 import { reactOutputTarget } from '@stencil/react-output-target';
 import { solidOutputTarget } from '@stencil/solid-output-target';
 import { vueOutputTarget } from '@stencil/vue-output-target';
