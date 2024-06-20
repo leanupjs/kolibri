@@ -4,7 +4,7 @@ import { Component, h, Host, JSX, Prop, State, Watch } from '@stencil/core';
 import { Generic } from 'adopted-style-sheets';
 import { setState, watchNumber } from '../../utils/prop.validators';
 import { Log } from '@leanup/lib';
-import { InputTypeOnDefault, InputTypeOnOff } from '@public-ui/schema';
+import type { InputTypeOnDefault, InputTypeOnOff } from '@public-ui/components';
 
 const DEFAULT_INPUT_CONTROL: InputControl = new InputControl('unknown', {
 	label: '',
@@ -147,12 +147,12 @@ export class LeanInputAdapter implements Generic.Element.ComponentApi<RequiredPr
 		this.syncControl();
 	};
 
-	private onChange = (_event: Event, value: unknown): void => {
+	private onInput = (_event: Event, value: unknown): void => {
 		if (typeof this.state._control === 'object') {
 			this.state._control.viewValue = value;
 		}
-		if (typeof this.state._on === 'object' && this.state._on !== null && typeof this.state._on.onChange === 'function') {
-			this.state._on.onChange(_event, value);
+		if (typeof this.state._on === 'object' && this.state._on !== null && typeof this.state._on.onInput === 'function') {
+			this.state._on.onInput(_event, value);
 		}
 	};
 
@@ -170,7 +170,7 @@ export class LeanInputAdapter implements Generic.Element.ComponentApi<RequiredPr
 							input._value = this.state._control.viewValue as InputTypeOnOff;
 							input._on = {
 								...this.state._on,
-								onChange: this.onChange,
+								onInput: this.onInput,
 							};
 							input._required = this.state._control.mandatory === true;
 							if (typeof this.state._control.label === 'string' && this.state._control.label.length > 0) {

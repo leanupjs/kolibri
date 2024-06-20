@@ -6,9 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { InputControl } from "@leanup/form";
-import { InputTypeOnDefault } from "@public-ui/schema";
+import { InputTypeOnDefault } from "@public-ui/components";
 export { InputControl } from "@leanup/form";
-export { InputTypeOnDefault } from "@public-ui/schema";
+export { InputTypeOnDefault } from "@public-ui/components";
 export namespace Components {
     interface LeanInputAdapter {
         /**
